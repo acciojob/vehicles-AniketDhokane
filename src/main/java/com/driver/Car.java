@@ -9,13 +9,26 @@ public class Car extends Vehicle {
     private int currentGear;
     private int seats;
 
-    public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
+     private String name;
+
+
+
+
+    public Car(String name,boolean isManual) {
+
+
+        super(name);
+        this.name=name;
+        this.isManual=isManual;
+
+
         //Hint: Car extends Vehicle
+
     }
 
     public void changeGear(int newGear){
 
-        System.out.println("changeGear method called - The gear is changed to: " + currentGear);
+        System.out.println("changeGear method called - The gear is changed to: " + newGear);
     }
 
     public void changeSpeed(int newSpeed, int newDirection){
