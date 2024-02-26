@@ -6,15 +6,13 @@ public class F1 extends Car {
 
 
 
+
     public F1(String name, boolean isManual) {
-        super(name,4,"F1",2,6,isManual,2);
-
-
-        //Use arbitrary values for parameters which are not mentioned\
-
+        super(name, 4, 2, 6, isManual, "F1", 2);
     }
 
-    public void accelerate(int rate){
+
+        public void accelerate(int rate){
         int newSpeed = getCurrentSpeed()+rate; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
