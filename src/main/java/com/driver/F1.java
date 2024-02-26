@@ -2,43 +2,20 @@ package com.driver;
 
 public class F1 extends Car {
 
-    String name;
-    boolean isManual;
 
-    @Override
-    public String getName() {
-        return name;
-    }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    @Override
-    public boolean isManual() {
-        return isManual;
-    }
-
-    @Override
-    public void setManual(boolean manual) {
-        isManual = manual;
-    }
 
     public F1(String name, boolean isManual) {
-        super(name,isManual);
+        super(name,4,"F1",2,6,isManual,2);
 
 
         //Use arbitrary values for parameters which are not mentioned\
-       this.name=name;
-       this.isManual=isManual;
-
-
 
     }
 
     public void accelerate(int rate){
-        int newSpeed = rate; //set the value of new speed by using currentSpeed and rate
+        int newSpeed = getCurrentSpeed()+rate; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
          * speed 1-50: gear 1
@@ -51,6 +28,7 @@ public class F1 extends Car {
 
         if(newSpeed == 0) {
             //Stop the car, set gear as 1
+            stop();
             changeGear(1);
         }
         else if(newSpeed>=1 && newSpeed<=50 ){
